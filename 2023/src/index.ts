@@ -1,12 +1,12 @@
-import day1 from './day1';
+import { day1_part1, day1_part2 } from './day1';
 
-type Challenge = () => Promise<string>;
+type Challenge = () => Promise<string | number>;
 
 class AdventOfCode2023 {
   private challenges: Challenge[];
 
   constructor() {
-    this.challenges = [day1];
+    this.challenges = [day1_part1, day1_part2];
   }
 
   async run() {
