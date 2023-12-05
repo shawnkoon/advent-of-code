@@ -6,7 +6,7 @@ export const readFileLines = async (path: string): Promise<string[]> => {
       encoding: 'utf-8',
     });
 
-    return file.split('\n');
+    return file.trim().split('\n');
   } catch (err) {
     throw new Error(`readFileLines Failed ${err}`);
   }

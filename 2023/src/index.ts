@@ -1,4 +1,5 @@
 import { day1_part1, day1_part2 } from './day1';
+import { day2_part1 } from './day2';
 
 type Challenge = () => Promise<string | number>;
 
@@ -6,7 +7,7 @@ class AdventOfCode2023 {
   private challenges: Challenge[];
 
   constructor() {
-    this.challenges = [day1_part1, day1_part2];
+    this.challenges = [day1_part1, day1_part2, day2_part1];
   }
 
   async run() {
