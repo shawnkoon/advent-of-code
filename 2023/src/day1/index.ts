@@ -1,4 +1,4 @@
-import fs from 'fs/promises';
+import { readFileLines } from '../utils';
 
 // Return 0 if not found.
 const startsWithNumber = (s: string): number => {
@@ -29,21 +29,9 @@ const isNumber = (c: string): boolean => {
   return true;
 };
 
-const readFileLines = async (fname: string): Promise<string[]> => {
-  try {
-    const file: string = await fs.readFile(`${__dirname}/${fname}`, {
-      encoding: 'utf-8',
-    });
-
-    return file.split('\n');
-  } catch (err) {
-    throw new Error(`readFileLines Failed ${err}`);
-  }
-};
-
 export const day1_part1 = async (): Promise<number> => {
   let sum = 0;
-  let lines = await readFileLines('input.txt');
+  let lines = await readFileLines(`${__dirname}/input.txt`);
 
   lines.forEach((str) => {
     let lMost = 0;
@@ -72,7 +60,7 @@ export const day1_part1 = async (): Promise<number> => {
 
 export const day1_part2 = async (): Promise<number> => {
   let sum = 0;
-  let lines = await readFileLines('input.txt');
+  let lines = await readFileLines(`${__dirname}/input.txt`);
 
   lines.forEach((str) => {
     let lMost = 0;
